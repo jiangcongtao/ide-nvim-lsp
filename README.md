@@ -33,3 +33,23 @@ npm install -g neovim yarn
 ```
 npm install -g typescript typescript-language-server eslint prettier
 ```
+
+## Tips
+
+Get long diagnosics message show in popup window 
+```
+:lua vim.lsp.diagnostic.show_line_diagnostics()
+```
+
+### Normal mode
+```
+SHIFT + y: yank to the end of line in normal mode
+SHIFT + d: delete to the end of line in normal mode
+SHIFT + c: change to the end of line in normal mode
+```
+
+### Insert mode
+```
+CTRL + w : delete word before cursor
+CTRL + u : delete to the beginning of the line
+```
