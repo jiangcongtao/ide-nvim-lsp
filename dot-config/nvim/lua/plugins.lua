@@ -122,6 +122,13 @@ return require('packer').startup({
         })
         use("nvim-treesitter/nvim-treesitter-textobjects")
 
+        use {
+            'nvim-telescope/telescope.nvim',
+            requires = { {"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}, {
+                "nvim-telescope/telescope-fzf-native.nvim"}},
+            config = get_setup('telescope')
+          }
+
         if packer_bootstrap then
             require("packer").sync()
         end
