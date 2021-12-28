@@ -8,6 +8,7 @@ end
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local completion = null_ls.builtins.completion
+local codeactions = null_ls.builtins.code_actions;
 
 null_ls.setup({
     debug = false,
@@ -16,6 +17,6 @@ null_ls.setup({
         formatting.black.with({ extra_args = {"--fast"}}), 
         formatting.prettier.with({ extra_args = {"--single-quote", "--jsx-single-quote"}}),
         completion.spell,
-        diagnostics.eslint, 
-    }
+        diagnostics.eslint,
+        codeactions.eslint,
 })
