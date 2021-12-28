@@ -128,11 +128,16 @@ return require('packer').startup({
         })
         use {
             'nvim-telescope/telescope.nvim',
-            requires = { {"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}, {
-                "nvim-telescope/telescope-fzf-native.nvim"}},
+            requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}, {"nvim-telescope/telescope-fzf-native.nvim"}},
             config = get_setup('telescope')
-          }
-
+        }
+        use {
+            'iamcco/markdown-preview.nvim',
+            run = function()
+                vim.fn['mkdp#util#install']()
+            end,
+            ft = {'markdown'}
+        }
         if packer_bootstrap then
             require("packer").sync()
         end
