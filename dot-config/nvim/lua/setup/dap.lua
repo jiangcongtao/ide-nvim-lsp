@@ -28,3 +28,18 @@ dap.configurations.javascript = {
         processId = require'dap.utils'.pick_process,
     },
 }
+
+dap.configurations.typescript = {
+    {
+        name = 'Launch',
+        type = 'node2',
+        request = 'launch',
+        program = '${workspaceFolder}/index.ts',
+        -- preLaunchTask = 'tsc .', -- node2 NO SUPPORT preLaunchTask
+        cwd = vim.fn.getcwd(),
+        sourceMaps = true,
+        protocol = 'inspector',
+        console = 'integratedTerminal',
+        outFiles = { "${workspaceFolder}/out/**/*.js"},
+    },
+}
