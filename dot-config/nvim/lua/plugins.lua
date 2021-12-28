@@ -110,10 +110,16 @@ return require('packer').startup({
             'mfussenegger/nvim-dap',
             config = get_setup('dap')
         })
+        use({ "rcarriga/nvim-dap-ui", 
+            requires = {"mfussenegger/nvim-dap"},
+            config = get_setup('dap-ui') 
+        })
+        
         use({
             'Pocco81/DAPInstall.nvim',
             config = get_setup('dap-install')
         })
+
 
         use({
             "nvim-treesitter/nvim-treesitter",
