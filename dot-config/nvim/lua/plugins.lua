@@ -115,6 +115,13 @@ return require('packer').startup({
             config = get_setup('dap-install')
         })
 
+        use({
+            "nvim-treesitter/nvim-treesitter",
+            config = get_setup("treesitter"),
+            run = ":TSUpdate"
+        })
+        use("nvim-treesitter/nvim-treesitter-textobjects")
+
         if packer_bootstrap then
             require("packer").sync()
         end
