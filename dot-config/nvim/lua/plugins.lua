@@ -29,7 +29,9 @@ return require('packer').startup({
         --     config = [[require('impatient')]]
         -- }
         use 'wbthomason/packer.nvim' -- Packer can manage itself
-        use '9mm/vim-closer'
+        -- use '9mm/vim-closer'
+        use 'tpope/vim-endwise'
+        use 'jiangmiao/auto-pairs'
 
         -- A list of colorscheme plugin you may want to try. Find what suits you.
         -- Use packadd command to add opt package/plugin
@@ -61,10 +63,10 @@ return require('packer').startup({
         })
 
         -- Automatic insertion and deletion of a pair of characters
-        use({
-            "Raimondi/delimitMate",
-            event = "InsertEnter"
-        })
+        -- use({
+        --     "Raimondi/delimitMate",
+        --     event = "InsertEnter"
+        -- })
 
         -- Comment plugin
         use({
@@ -88,12 +90,12 @@ return require('packer').startup({
                         {"hrsh7th/vim-vsnip-integ"}, {"f3fora/cmp-spell", {"hrsh7th/cmp-calc"}, {"hrsh7th/cmp-emoji"}}},
             config = get_setup("cmp")
         })
-        --  use({
-        --     "lewis6991/gitsigns.nvim",
-        --     requires = {"nvim-lua/plenary.nvim"},
-        --     event = "BufReadPre",
-        --     config = get_setup("gitsigns")
-        -- })
+        use({
+            "lewis6991/gitsigns.nvim",
+            requires = {"nvim-lua/plenary.nvim"},
+            event = "BufReadPre",
+            config = get_setup("gitsigns")
+        })
          
         use({
             "williamboman/nvim-lsp-installer",

@@ -1,3 +1,5 @@
 undo/
 configstore
 configstore
+.DS_Store
+plugin/
