@@ -19,4 +19,4 @@ null_ls.setup({
         completion.spell,
         diagnostics.eslint,
         codeactions.eslint,
-})
+}})
