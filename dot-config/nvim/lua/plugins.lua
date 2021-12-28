@@ -121,7 +121,11 @@ return require('packer').startup({
             run = ":TSUpdate"
         })
         use("nvim-treesitter/nvim-treesitter-textobjects")
-
+        use({
+            "jose-elias-alvarez/null-ls.nvim",
+            requires = {{"nvim-lua/plenary.nvim"}},
+            config = get_setup('null-ls')
+        })
         use {
             'nvim-telescope/telescope.nvim',
             requires = { {"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}, {
