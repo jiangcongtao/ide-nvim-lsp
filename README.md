@@ -41,6 +41,11 @@ Get long diagnosics message show in popup window
 :lua vim.lsp.diagnostic.show_line_diagnostics()
 ```
 
+use LSP code formatting
+```
+:lua vim.lsp.buf.formatting()
+```
+
 ### Normal mode
 ```
 SHIFT + y: yank to the end of line in normal mode
