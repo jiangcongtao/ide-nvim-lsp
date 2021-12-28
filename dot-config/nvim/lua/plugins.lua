@@ -62,11 +62,11 @@ return require('packer').startup({
             after = 'ultisnips'
         })
 
-        -- Automatic insertion and deletion of a pair of characters
-        -- use({
-        --     "Raimondi/delimitMate",
-        --     event = "InsertEnter"
-        -- })
+        -- Translation
+        use({
+            'voldikss/vim-translator',
+            config = get_setup("translator")
+        })
 
         -- Comment plugin
         use({
@@ -85,9 +85,10 @@ return require('packer').startup({
         -- })
         use({
             "hrsh7th/nvim-cmp",
-            requires = {{"neovim/nvim-lspconfig"},{"hrsh7th/cmp-nvim-lsp"}, {"hrsh7th/cmp-nvim-lua"}, {"hrsh7th/cmp-buffer"}, 
-                        {"hrsh7th/cmp-path"},{"hrsh7th/cmp-cmdline"}, {"hrsh7th/vim-vsnip"}, {"hrsh7th/cmp-vsnip"},
-                        {"hrsh7th/vim-vsnip-integ"}, {"f3fora/cmp-spell", {"hrsh7th/cmp-calc"}, {"hrsh7th/cmp-emoji"}}},
+            requires = {{"neovim/nvim-lspconfig"}, {"hrsh7th/cmp-nvim-lsp"}, {"hrsh7th/cmp-nvim-lua"},
+                        {"hrsh7th/cmp-buffer"}, {"hrsh7th/cmp-path"}, {"hrsh7th/cmp-cmdline"}, {"hrsh7th/vim-vsnip"},
+                        {"hrsh7th/cmp-vsnip"}, {"hrsh7th/vim-vsnip-integ"},
+                        {"f3fora/cmp-spell", {"hrsh7th/cmp-calc"}, {"hrsh7th/cmp-emoji"}}},
             config = get_setup("cmp")
         })
         use({
@@ -96,22 +97,23 @@ return require('packer').startup({
             event = "BufReadPre",
             config = get_setup("gitsigns")
         })
-         
+
         use({
             "williamboman/nvim-lsp-installer",
-            requires= {{"neovim/nvim-lspconfig"}},
+            requires = {{"neovim/nvim-lspconfig"}},
             config = get_setup('lsp-installer')
         })
-  
+
         use({"tpope/vim-repeat"})
         use({"tpope/vim-surround"})
-        use({'mfussenegger/nvim-dap',
-            config = get_setup('dap')    
+        use({
+            'mfussenegger/nvim-dap',
+            config = get_setup('dap')
         })
-        use({'Pocco81/DAPInstall.nvim',
-            config = get_setup('dap-install')    
+        use({
+            'Pocco81/DAPInstall.nvim',
+            config = get_setup('dap-install')
         })
-       
 
         if packer_bootstrap then
             require("packer").sync()
