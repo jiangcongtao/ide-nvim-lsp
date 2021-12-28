@@ -29,7 +29,7 @@ return require('packer').startup({
         --     config = [[require('impatient')]]
         -- }
         use 'wbthomason/packer.nvim' -- Packer can manage itself
-        -- use '9mm/vim-closer'
+        use 'mhinz/vim-startify' -- start screen
         use 'tpope/vim-endwise'
         use 'jiangmiao/auto-pairs'
 
