@@ -2,7 +2,7 @@ local dap = require('dap')
 -- Note: every debugger has its own configurations.
 -- Refer to
 --  All Debugger: https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
---
+--  Variables Reference in Launch.json: https://code.visualstudio.com/docs/editor/variables-reference
 dap.adapters.node2 = {
     type = 'executable',
     command = 'node',
@@ -34,7 +34,7 @@ dap.configurations.typescript = {
         name = 'Launch',
         type = 'node2',
         request = 'launch',
-        program = '${workspaceFolder}/index.ts',
+        program = '${file}',
         -- preLaunchTask = 'tsc .', -- node2 NO SUPPORT preLaunchTask
         cwd = vim.fn.getcwd(),
         sourceMaps = true,
