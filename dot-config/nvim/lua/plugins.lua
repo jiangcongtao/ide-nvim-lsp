@@ -153,6 +153,17 @@ return require('packer').startup({
           'szw/vim-maximizer'
         })
 
+        use({"kyazdani42/nvim-web-devicons"})
+        use({
+            "nvim-lualine/lualine.nvim",
+            config = get_setup("lualine"),
+            event = "VimEnter",
+            requires = {
+                "kyazdani42/nvim-web-devicons",
+                opt = true
+            }
+        })
+        
         if packer_bootstrap then
             require("packer").sync()
         end
