@@ -144,6 +144,15 @@ return require('packer').startup({
             end,
             ft = {'markdown'}
         }
+
+        use({
+          'puremourning/vimspector',
+          config = get_setup('vimspector')
+        })
+        use({
+          'szw/vim-maximizer'
+        })
+
         if packer_bootstrap then
             require("packer").sync()
         end
