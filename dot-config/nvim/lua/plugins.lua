@@ -1,3 +1,5 @@
+-- https://github.com/nanotee/nvim-lua-guide
+
 local utils = require("utils")
 
 vim.cmd([[
