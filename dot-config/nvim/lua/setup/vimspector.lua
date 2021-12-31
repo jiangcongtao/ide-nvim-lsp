@@ -32,3 +32,8 @@ map("n", "<leader>d<space>", '<cmd>call vimspector#Continue()<cr>')
 map("n", "<leader>drc", '<cmd>call vimspector#RunToCursor()<cr>')
 map("n", "<leader>dbp", '<cmd>call vimspector#ToggleBreakpoint()<cr>')
 map("n", "<leader>dcbp", '<cmd>call vimspector#ToggleAdvancedBreakpoint()<cr>')
+
+-- Reference
+-- https://puremourning.github.io/vimspector/configuration.html
+-- https://puremourning.github.io/vimspector-web/
+-- https://puremourning.github.io/vimspector-web/demo-setup.html
